@@ -1,8 +1,74 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tengille</title>
+    <style>
+
+      a {
+        color: #666;
+        font-style: italic;
+        text-decoration: none;
+      }
+
+    </style>
   </head>
   <body>
-    Hello, friend
+    <p>Hello, friend.</p>
+    <p>
+      🚧 This site is a work in progress.
+    </p>
+
+    <p>
+      I've redone this site numerous times, but it is always inspired by Devine Lu Linvega's <a href="https://wiki.xxiivv.com/site/home.html">XXIIVV</a>.
+    </p>
+
+    <p>
+      I'm working on a game, that's similtar to <a href="https://en.wikipedia.org/wiki/Metal_Gear_Solid_(2000_video_game)">
+      Metal Gear: Ghost Babel</a>, in 2024. I'll devlog about that probably, along with other things such
+      as travel, code, and personal growth.
+    </p>
+
+    <div>
+      <div><a id="chess" target="new" href="https://www.chess.com/member/tngille">chess.com</a></div>
+      <div><a id="twitch" target="new" href="https://www.twitch.tv/tengille_">twitch.tv</a></div>
+      <div><a id="duolingo" target="new" href="https://www.duolingo.com/profile/__john">duolingo.com</a></div>
+      <div><a id="github" target="new" href="https://github.com/tengille">github.com</a></div>
+      <div><a id="strava" target="new" href="#">strava.com</span></div>
+    </div>
+
+    <dialog>
+      <button type="submit" onclick="dialog.close()">X</button>
+      <p id="message"></p>
+    </dialog>
   </body>
+
+  <script>
+
+    class Dialog {
+      constructor() {
+        this.el = document.querySelector('dialog');
+        this.message = document.querySelector('#message');
+      }
+
+      open({ text }) {
+        this.message.innerText = text;
+        this.el.showModal();
+      }
+
+      close() {
+        this.message.innerText = '';
+        this.el.close();
+      }
+    }
+
+    const dialog = new Dialog();
+    const strava = document.querySelector('#strava');
+
+    strava.addEventListener('click', (e) => {
+      e.preventDefault();
+      dialog.open({ text: "I use Strava to track my runs/walks. Link (maybe) available upon request." })
+    });
+
+  </script>
 </html>
