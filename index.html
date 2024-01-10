@@ -5,6 +5,10 @@
     <title>tengille</title>
     <style>
 
+      h3 {
+        cursor: pointer;
+      }
+
       a {
         border-bottom: 1px solid purple;
         font-style: italic;
@@ -31,21 +35,21 @@
     </blockquote>
 
     <p>
-      🚧 This site is a work in progress.
+      🚧 this site is a work in progress.
     </p>
 
     <p>
-      I've redone this site numerous times, but it is always inspired by Devine Lu Linvega's <a href="https://wiki.xxiivv.com/site/home.html">XXIIVV</a>.
-      Its a new year, may as well redo it again.
-    </p>
-
-    <p>
-      I'm working on a game, that's similtar to <a href="https://en.wikipedia.org/wiki/Metal_Gear_Solid_(2000_video_game)">
-      Metal Gear: Ghost Babel</a>, in 2024. I'll devlog about that probably, along with other things such
-      as travel, code, and personal growth (or lack thereof).
+      i've redone this site numerous times, but it is always inspired by Devine Lu Linvega's <a href="https://wiki.xxiivv.com/site/home.html">XXIIVV</a>.
+      its a new year, may as well redo it again.
     </p>
 
     <div>
+      <h4>projects</h4>
+      <a href="./nightjar.html">nightjar</a>
+    </div>
+
+    <div>
+      <h4>links</h4>
       <div><a id="chess" target="new" href="https://www.chess.com/member/tngille">chess.com</a></div>
       <div><a id="twitch" target="new" href="https://www.twitch.tv/tengille_">twitch.tv</a></div>
       <div><a id="duolingo" target="new" href="https://www.duolingo.com/profile/__john">duolingo.com</a></div>
@@ -86,6 +90,13 @@
       e.preventDefault();
       dialog.open({ text: "I use Strava to track my runs/walks. Link (maybe) available upon request." })
     });
+
+    const titles = document.querySelectorAll('section h3')
+    for (let i = 0; i < titles.length; i++) {
+      titles[i].addEventListener('click', function(el) {
+        debugger
+      });
+    }
 
   </script>
 </html>
