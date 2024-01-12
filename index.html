@@ -4,6 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tengille</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+      @font-face {
+        font-family: "mgs1";
+        src: url("./fnt/METAG___.TTF");
+      }
+
+      html,
+      body {
+        font-family: 'IBM Plex Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
       h3 {
         cursor: pointer;
@@ -27,76 +39,41 @@
         padding: 10px;
       }
 
+      #app {
+          margin: auto;
+          max-width: 800px;
+          padding: 10px;
+      }
     </style>
   </head>
   <body>
-    <blockquote>
-      "Its the idle hours that most often lead a man to ruin."
-    </blockquote>
+    <div id="app">
+      <blockquote>
+        "Its the idle hours that most often lead a man to ruin."
+      </blockquote>
 
-    <p>
-      🚧 this site is a work in progress.
-    </p>
+      <p>
+        🚧 this site is a work in progress
+      </p>
 
-    <p>
-      i've redone this site numerous times, but it is always inspired by Devine Lu Linvega's <a href="https://wiki.xxiivv.com/site/home.html">XXIIVV</a>.
-      its a new year, may as well redo it again.
-    </p>
+      <p>
+        I've redone this site numerous times, under various names, but it is always inspired by Devine
+        Lu Linvega's <a href="https://wiki.xxiivv.com/site/home.html">XXIIVV</a>. Its a new year,
+        may as well redo it again.
+      </p>
 
-    <div>
-      <h4>projects</h4>
-      <a href="https://tengille.github.io/nightjar/">nightjar</a>
+      <div>
+        <h4>projects</h4>
+        <a target="_blank" href="https://tengille.github.io/nightjar/">nightjar</a>
+      </div>
+
+      <div>
+        <h4>links</h4>
+        <div><a id="chess" target="_blank" href="https://www.chess.com/member/tngille">chess.com</a></div>
+        <div><a id="twitch" target="_blank" href="https://www.twitch.tv/tengille_">twitch.tv</a></div>
+        <div><a id="github" target="_blank" href="https://github.com/tengille">github.com</a></div>
+        <div><a id="rocketleague" target="_blank" href="https://rocketleague.tracker.network/rocket-league/profile/epic/tengille/mmr?playlist=11">rocketleague.tracker</a></div>
+      </div>
     </div>
-
-    <div>
-      <h4>links</h4>
-      <div><a id="chess" target="new" href="https://www.chess.com/member/tngille">chess.com</a></div>
-      <div><a id="twitch" target="new" href="https://www.twitch.tv/tengille_">twitch.tv</a></div>
-      <div><a id="duolingo" target="new" href="https://www.duolingo.com/profile/__john">duolingo.com</a></div>
-      <div><a id="github" target="new" href="https://github.com/tengille">github.com</a></div>
-      <div><a id="strava" target="new" href="#">strava.com</span></div>
-      <div><a id="rocketleague" target="new" href="https://rocketleague.tracker.network/rocket-league/profile/epic/tengille/mmr?playlist=11">rocketleague.tracker</a></div>
-    </div>
-
-    <dialog>
-      <button type="submit" onclick="dialog.close()">X</button>
-      <p id="message"></p>
-    </dialog>
   </body>
-
-  <script>
-
-    class Dialog {
-      constructor() {
-        this.el = document.querySelector('dialog');
-        this.message = document.querySelector('#message');
-      }
-
-      open({ text }) {
-        this.message.innerText = text;
-        this.el.showModal();
-      }
-
-      close() {
-        this.message.innerText = '';
-        this.el.close();
-      }
-    }
-
-    const dialog = new Dialog();
-    const strava = document.querySelector('#strava');
-
-    strava.addEventListener('click', (e) => {
-      e.preventDefault();
-      dialog.open({ text: "I use Strava to track my runs/walks. Link (maybe) available upon request." })
-    });
-
-    const titles = document.querySelectorAll('section h3')
-    for (let i = 0; i < titles.length; i++) {
-      titles[i].addEventListener('click', function(el) {
-        debugger
-      });
-    }
-
-  </script>
 </html>
