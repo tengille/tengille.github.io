@@ -26,6 +26,10 @@ a:hover {
   border-bottom: 2px solid var(--default-font-color);
 }
 
+img {
+  width: 128px;
+}
+
 /* styles */
 #container {
   height: calc(100vh - 20px);
