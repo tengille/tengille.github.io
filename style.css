@@ -5,6 +5,7 @@
 :root {
   --default-background-color: #000;
   --default-font-color: #DDD;
+  --link-hover-color: #fbf236;
 }
 
 /* normalize */
@@ -23,7 +24,7 @@ a {
 }
 
 a:hover {
-  border-bottom: 2px solid var(--default-font-color);
+  border-bottom: 2px solid var(--link-hover-color);
 }
 
 img {
