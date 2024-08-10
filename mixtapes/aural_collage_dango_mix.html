@@ -1,0 +1,207 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tengille | mixtapes | aural collage (dango mix)</title>
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/a80270826f.js" crossorigin="anonymous"></script>
+
+    <style>
+
+      #list {
+        margin-top: 20px;
+      }
+
+      #list .track {
+        display: flex;
+        flex-direction: row;
+        padding: 3px 5px;
+      }
+
+      #list .track .number {
+        margin-right: 5px;
+        width: 20px;
+      }
+
+      #list .track .title {
+        margin-right: 5px;
+        width: 560px;
+      }
+
+      #list .track .time {
+        text-align: center;
+        margin-right: 5px;
+        width: 40px;
+      }
+
+      #list .track .link {
+        cursor: pointer;
+        margin-right: 3px;
+        text-align: center;
+        width: 20px;
+      }
+
+      #list .track .link a {
+        border: none;
+      }
+
+      #list .track .link:hover,
+      p a:hover {
+        background: linear-gradient(to left, #743ad5, #d53a9d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* normalize anchor */
+      p a {
+        border-style: solid;
+        border-image-slice: 1;
+        border-width: 2px;
+        border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        margin-right: 0px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+
+      <div id="links">
+        <a href="../index.html">index</a>
+        <a target="new" href="https://twitch.tv/tengille_">twitch</a>
+        <a target="new" href="https://www.youtube.com/@tengille">youtube</a>
+        <a target="new" href="https://github.com/tengille">github</a>
+        <a target="new" href="https://ko-fi.com/tengille">ko-fi</a>
+      </div>
+
+      <img src="../assets/images/dango.gif" />
+
+      <h4>AURAL COLLAGE (THE DANGO HOUSE & AMBIENT D&B SUBSET MIX)🍡</h4>
+
+      <p>
+        I watch of a lot of <a target="new" href="https://twitch.tv/clarissa">Clarissa</a> on Twitch,
+        who allows viewers to request songs. I've requested some that went over well, and this mixtape
+        is effectively those +1'd songs, which are all part of my main repository of music I like,
+        called <a target="new" href="https://www.youtube.com/playlist?list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp">Aural Collage</a>,
+        (hence a subset). I admittedly put very little thought into the batting order of these tracks, but did try to
+        keep it around 1 hour total.
+      </p>
+      <p>
+        Enjoy!
+      </p>
+      <p>
+        <div style="margin-right: 10px; float: left;">
+          <i class="fa-regular fa-clock"></i>
+        </div>
+        <div>1 hour, 24 seconds</div>
+      </p>
+
+      <!-- that dog just ain't gonna hunt -->
+      <div id="list">
+      </div>
+
+    </div>
+  </body>
+
+  <script>
+
+    const Track = function(i, data) {
+      if (i < 10) { i = `0${i}`; }
+
+      return `
+        <div class="track">
+          <div class="number">${i}</div>
+          <div class="title">${data.title}</div>
+          <div class="time">${data.time}</div>
+          <div class="link"><a target="new" href="${data.youtube}"><i class="fa-brands fa-youtube"></i></a></div>
+          <div class="link"><a target="new" href="${data.spotify}"><i class="fa-brands fa-spotify"></i></a></div>
+        </div>
+      `
+    }
+
+    const LIST = document.getElementById('list');
+    const TRACKS = [
+      {
+        title: 'Hugo Mari - Must Be Deep (Original Mix)',
+        time: '5:46',
+        youtube: 'https://www.youtube.com/watch?v=KKYSR1f3quY&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=76',
+        spotify: 'https://open.spotify.com/track/5XsozhvsiH5nJ5xdEJkn4o'
+      },
+      {
+        title: "Henrik Villard - Don't Want It",
+        time: '5:15',
+        youtube: 'https://www.youtube.com/watch?v=UM25_r5NWNk&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=56',
+        spotify: 'https://open.spotify.com/album/6EXr2JDdhtzMhXuOWhj6aB'
+      },
+      {
+        title: "Volga - CREAM SODA",
+        time: '5:16',
+        youtube: 'https://www.youtube.com/watch?v=ycJRtne4tlI&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=67',
+        spotify: 'https://open.spotify.com/track/31g2L5edyy6ALISytIlULu?si=6cc872f5377a45cd&nd=1&dlsi=a90dce2bf69b47e5'
+      },
+      {
+        title: "Ed Harrison - Imbrium (NeoTokyo OST)",
+        time: '4:49',
+        youtube: 'https://www.youtube.com/watch?v=ssMT_Sp2mBw&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=83',
+        spotify: 'https://open.spotify.com/track/4kZ52fLt6YibA0zm87sJf3'
+      },
+      {
+        title: "nuphory - nautilus",
+        time: '5:13',
+        youtube: 'https://www.youtube.com/watch?v=Kk-P_gPgorw&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=100',
+        spotify: 'https://open.spotify.com/track/1KDdX7HNdfaDWORTuCIwO8'
+      },
+      {
+        title: "Henrik Villard - Sunshine Funk (Original Mix)",
+        time: '4:38',
+        youtube: 'https://www.youtube.com/watch?v=DcHRK9-wDE8&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=81',
+        spotify: 'https://open.spotify.com/track/0WmrYDPVopqHlvyxAKsEA5'
+      },
+      {
+        title: "Melchior Sultana - Phased",
+        time: '6:50',
+        youtube: 'https://www.youtube.com/watch?v=hNgcyZ-Zrt8&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=115',
+        spotify: 'https://open.spotify.com/track/71jfLzqdUGho3nsPsXD4Ry'
+      },
+      {
+        title: "Lebedev (RU) - Magic Night",
+        time: '6:19',
+        youtube: 'https://www.youtube.com/watch?v=BCUR6474r_k&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=117',
+        spotify: 'https://open.spotify.com/track/2pc3owwYSLwYoxJXpClZ2E'
+      },
+      {
+        title: "Volta Bureau - Hot (Original Mix)",
+        time: '5:12',
+        youtube: 'https://www.youtube.com/watch?v=kXWPD-IT5Xo&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=10',
+        spotify: 'https://open.spotify.com/track/2f0amumboSpBjsuQOJTA9H'
+      },
+      {
+        title: "Byron the Aquarius - Song For A Friend (ft. Cropper)",
+        time: '4:23',
+        youtube: 'https://www.youtube.com/watch?v=meXEU6POKSY&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=35',
+        spotify: 'https://open.spotify.com/track/1Pm6Ku1fjbklt4XSddPtpg'
+      },
+      {
+        title: "Henrik Villard - You Say (Original Mix)",
+        time: '6:35',
+        youtube: 'https://www.youtube.com/watch?v=4nkcFvPHSjc&list=PLybvmiX6gT2qstGuwPoIKzTNzR_Hoklmp&index=50',
+        spotify: 'https://open.spotify.com/track/21E5dgQXY392T3NMRVJ9Mw?si=51681182c4f74334'
+      },
+    ];
+
+    // ... welcome to the fuckin' show
+    for (let i = 0; i < TRACKS.length; i++) {
+      let tStr = Track(i+1, TRACKS[i]);
+      LIST.innerHTML += tStr;
+    }
+
+  </script>
+
+</html>

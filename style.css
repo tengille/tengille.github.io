@@ -27,7 +27,6 @@ body {
 
 a {
   color: var(--default-font-color);
-  font-size: 18px;
   text-decoration: none;
   margin-right: 10px;
 }
@@ -59,5 +58,6 @@ img {
 }
 
 #container #links {
+  font-size: 14px;
   padding-bottom: 10px;
 }
