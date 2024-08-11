@@ -61,3 +61,9 @@ img {
   font-size: 14px;
   padding-bottom: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  #container {
+    width: calc(100% - 20px);
+  }
+}
