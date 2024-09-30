@@ -86,55 +86,17 @@
       <h4>AURAL COLLAGE 🦋</h4>
 
       <p>
-        Description coming soon...
+        A mercurial, myriad of sounds I enjoy hearing. I encourage you to use the "shuffle" button.
       </p>
 
       <p>
         <div style="margin-right: 10px; float: left;">
-          <i class="fa-regular fa-clock"></i>
+          <i class="fa-regular fa-youtube"></i>
         </div>
         <div>1 hour, 24 seconds</div>
       </p>
 
-      <!-- that dog just ain't gonna hunt -->
-      <div id="list">
-      </div>
-
     </div>
   </body>
-
-  <script>
-
-    const Track = function(i, data) {
-      if (i < 10) { i = `0${i}`; }
-
-      return `
-        <div class="track">
-          <div class="number">${i}</div>
-          <div class="title">${data.title}</div>
-          <div class="time">${data.time}</div>
-          <div class="link"><a target="new" href="${data.youtube}"><i class="fa-brands fa-youtube"></i></a></div>
-          <div class="link"><a target="new" href="${data.spotify}"><i class="fa-brands fa-spotify"></i></a></div>
-        </div>
-      `
-    }
-
-    const LIST = document.getElementById('list');
-    const TRACKS = [
-      {
-        title: 'Title',
-        time: '00:00',
-        youtube: '#',
-        spotify: '#'
-      },
-    ];
-
-    // ... welcome to the fuckin' show
-    for (let i = 0; i < TRACKS.length; i++) {
-      let tStr = Track(i+1, TRACKS[i]);
-      LIST.innerHTML += tStr;
-    }
-
-  </script>
 
 </html>
