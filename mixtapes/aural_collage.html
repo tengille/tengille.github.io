@@ -1,0 +1,140 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tengille | mixtapes | aural collage (dango mix)</title>
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/a80270826f.js" crossorigin="anonymous"></script>
+
+    <style>
+
+      #list {
+        margin-top: 20px;
+      }
+
+      #list .track {
+        display: flex;
+        flex-direction: row;
+        padding: 3px 5px;
+      }
+
+      #list .track .number {
+        margin-right: 5px;
+        width: 20px;
+      }
+
+      #list .track .title {
+        margin-right: 5px;
+        width: 560px;
+      }
+
+      #list .track .time {
+        text-align: center;
+        margin-right: 5px;
+        width: 40px;
+      }
+
+      #list .track .link {
+        cursor: pointer;
+        margin-right: 3px;
+        text-align: center;
+        width: 20px;
+      }
+
+      #list .track .link a {
+        border: none;
+      }
+
+      #list .track .link:hover,
+      p a:hover {
+        background: linear-gradient(to left, #743ad5, #d53a9d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* normalize anchor */
+      p a {
+        border-style: solid;
+        border-image-slice: 1;
+        border-width: 2px;
+        border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        margin-right: 0px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+
+      <div id="links">
+        <a href="../index.html">index</a>
+        <a target="new" href="https://twitch.tv/tengille_">twitch</a>
+        <a target="new" href="https://www.youtube.com/@tengille">youtube</a>
+        <a target="new" href="https://github.com/tengille">github</a>
+        <a target="new" href="https://ko-fi.com/tengille">ko-fi</a>
+      </div>
+
+      <img style="width: 100%;" src="../assets/images/aural collage/CD 1.png" />
+
+      <h4>AURAL COLLAGE 🦋</h4>
+
+      <p>
+        Description coming soon...
+      </p>
+
+      <p>
+        <div style="margin-right: 10px; float: left;">
+          <i class="fa-regular fa-clock"></i>
+        </div>
+        <div>1 hour, 24 seconds</div>
+      </p>
+
+      <!-- that dog just ain't gonna hunt -->
+      <div id="list">
+      </div>
+
+    </div>
+  </body>
+
+  <script>
+
+    const Track = function(i, data) {
+      if (i < 10) { i = `0${i}`; }
+
+      return `
+        <div class="track">
+          <div class="number">${i}</div>
+          <div class="title">${data.title}</div>
+          <div class="time">${data.time}</div>
+          <div class="link"><a target="new" href="${data.youtube}"><i class="fa-brands fa-youtube"></i></a></div>
+          <div class="link"><a target="new" href="${data.spotify}"><i class="fa-brands fa-spotify"></i></a></div>
+        </div>
+      `
+    }
+
+    const LIST = document.getElementById('list');
+    const TRACKS = [
+      {
+        title: 'Title',
+        time: '00:00',
+        youtube: '#',
+        spotify: '#'
+      },
+    ];
+
+    // ... welcome to the fuckin' show
+    for (let i = 0; i < TRACKS.length; i++) {
+      let tStr = Track(i+1, TRACKS[i]);
+      LIST.innerHTML += tStr;
+    }
+
+  </script>
+
+</html>
